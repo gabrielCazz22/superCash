@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Custom Documentation
+LEARNING_LOG.md
+agent.md
+leerPrimero.md

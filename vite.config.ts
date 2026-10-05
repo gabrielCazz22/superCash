@@ -6,6 +6,10 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    host: true
+    host: true,
+    watch: {
+      usePolling: true,
+
+    }
   }
 })
