@@ -41,12 +41,13 @@ export default function Shopping() {
                                 />
                             ))
                         )}
-
-                        <Button
-                            variant="primary" onClick={() => setIsModalOpen(true)}>
-                            <Plus size={10} />
-                        </Button>
-
+                        <div className="flex justify-center items-center text-center flex-col">
+                            <Button
+                                variant="nuke" size="sm" onClick={() => setIsModalOpen(true)}>
+                                <Plus size={10} />
+                                Agregar Producto
+                            </Button>
+                        </div>
                     </div>
 
 
