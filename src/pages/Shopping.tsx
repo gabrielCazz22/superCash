@@ -1,7 +1,13 @@
 import { useShopping } from "../hooks/useShopping"
 import { ShoppingItems } from "../components/ui/ShoppingItems"
+import { Button } from "../components/ui/Button"
+import AddProductModal from "../components/modals/AddProductModal"
+import { useState } from "react"
+import { Plus } from "lucide-react"
 
 export default function Shopping() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const {
         productos,
         nuevoProducto,
@@ -36,6 +42,11 @@ export default function Shopping() {
                             ))
                         )}
 
+                        <Button
+                            variant="primary" onClick={() => setIsModalOpen(true)}>
+                            <Plus size={10} />
+                        </Button>
+
                     </div>
 
 
@@ -47,7 +58,13 @@ export default function Shopping() {
                 </div>
 
             </main>
+            <AddProductModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </>
+
+
 
     )
 }
