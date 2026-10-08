@@ -10,3 +10,7 @@
   --color-primary: #2563EB;
 
 }
+
+body {
+  background-color: var(--color-background);
+}
