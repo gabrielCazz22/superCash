@@ -8,6 +8,7 @@ import { Plus } from "lucide-react"
 export default function Shopping() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+
     const {
         productos,
         nuevoProducto,
@@ -62,6 +63,7 @@ export default function Shopping() {
             <AddProductModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
+                onAddProduct={nuevoProducto}
             />
         </>
 
