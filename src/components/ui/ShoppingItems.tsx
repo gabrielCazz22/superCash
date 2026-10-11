@@ -36,7 +36,7 @@ export function ShoppingItems({ producto, onToggle, onEliminar }: ShoppingItemsP
             </span>
 
             <span className="font-semibold text-sm text-emerald-600 mr-2">
-                ${(producto.precioUnitario * producto.cantidad).toFixed(2)}
+                ${((producto.precioUnitario ?? 0) * producto.cantidad).toFixed(2)}
             </span>
 
             <div className="flex items-center gap-2 ">

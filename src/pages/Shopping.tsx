@@ -20,14 +20,15 @@ export default function Shopping() {
     return (
 
         <>
-            <main className="flex flex-col w-full min-h-screen 
-             items-center py-[5vh] px-6 bg-[steelblue] text-white ">
-                <header className="bg-gray-400 w-[80vw] h-10 rounded-t-md"></header>
+            <main className="flex flex-col w-full h-full items-center p-3 bg-[steelblue] text-white overflow-hidden">
+                <header className="bg-gray-400 w-full max-w-md h-8 rounded-t-md shrink-0 flex  justify-center items-center text-center"><p>Lista</p></header>
 
                 {/* Body */}
-                <div className="flex flex-col w-[80vw] min-h-80 bg-white gap-2 px-6 py-2 justify-between">
+                <div className="flex flex-col w-full max-w-md flex-1 bg-white gap-2 p-3 justify-between rounded-b-md overflow-hidden min-h-0">
 
-                    <div className="border w-full p-4 flex-2 bg-amber-600 overflow-y-auto">
+                    <div className="border w-full p-3 shrink-0 bg-blue-600 rounded flex-1"></div>
+
+                    <div className="border border-slate-200 w-full p-3 flex-3 bg-amber-600 overflow-y-auto rounded flex flex-col gap-2 min-h-0">
                         {productos.length === 0 ? (
                             <p className="text-center text-xs text-slate-50 py-4">
                                 No hay productos aún
@@ -42,18 +43,17 @@ export default function Shopping() {
                                 />
                             ))
                         )}
-                        <div className="flex justify-center items-center text-center flex-col">
+                        <div className="flex justify-center items-center text-center flex-col mt-auto pt-2">
                             <Button
                                 variant="nuke" size="sm" onClick={() => setIsModalOpen(true)}>
-                                <Plus size={10} />
+                                <Plus size={10} className="focus:bg-green-400" />
                                 Agregar Producto
                             </Button>
                         </div>
                     </div>
 
 
-                    <div className="border w-full p-5 flex-2 bg-blue-600"></div>
-                    <div className="border w-full p-5 flex-1 bg-red-600"></div>
+                    <div className="border w-full p-2.5 shrink-0 bg-red-600 rounded flex-1"></div>
 
 
 
