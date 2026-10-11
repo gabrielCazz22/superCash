@@ -1,4 +1,4 @@
-export type UnidadMedida = 'kg' | 'g' | 'l' | 'ml' | 'paquete' | 'pz'
+export type UnidadMedida = 'kg' | 'g' | 'l' | 'pz'
 
 export interface Producto {
     id: string,
