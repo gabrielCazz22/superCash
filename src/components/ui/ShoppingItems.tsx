@@ -18,6 +18,12 @@ export interface ShoppingItemsProps {
 
 export function ShoppingItems({ producto, onToggle, onEliminar }: ShoppingItemsProps) {
 
+
+
+    const factorCantidad = producto.unidad === 'g' ? producto.cantidad / 1000 : producto.cantidad
+
+    const subTotal = factorCantidad * (producto.precioUnitario ?? 0)
+
     return (
         <div className="flex items-center justify-between p-2.5 bg-white border border-slate-200 rounded-lg shadow-sm">
 
@@ -36,7 +42,7 @@ export function ShoppingItems({ producto, onToggle, onEliminar }: ShoppingItemsP
             </span>
 
             <span className="font-semibold text-sm text-emerald-600 mr-2">
-                ${((producto.precioUnitario ?? 0) * producto.cantidad).toFixed(2)}
+                ${(subTotal.toFixed(2))}
             </span>
 
             <div className="flex items-center gap-2 ">
