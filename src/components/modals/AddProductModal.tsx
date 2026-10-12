@@ -46,7 +46,7 @@ export default function AddProductModal({
 }: ModalProps) {
 
     const [nombre, setNombre] = useState<string>("");
-    const [precio, setPrecio] = useState<number>(1);
+    const [precio, setPrecio] = useState<number>();
     const [cantidad, setCantidad] = useState<number>(1);
     const [unidad, setUnidad] = useState<UnidadMedida>("pz");
     const [alertConfig, setAlertConfig] = useState<{ isOpen: boolean; message: string }>({
@@ -161,11 +161,13 @@ export default function AddProductModal({
                             <label className="flex items-center gap-2 text-slate-700">
                                 Precio
                                 <input type="number"
-                                    value={precio}
+                                    value={precio ?? ""}
                                     min="0"
-                                    onChange={(e) => setPrecio(Number(e.target.value))}
+                                    step="any"
+                                    onChange={(e) => setPrecio(e.target.value === "" ? undefined : Number(e.target.value))}
                                     required
-                                    className="w-15 py-1 text-center border bg-white rounded-md focus:outline-none" placeholder="0.00" />
+                                    className="w-15 py-1 text-center border bg-white rounded-md focus:outline-none"
+                                    placeholder="0.00" />
                             </label>
                         </div>
 
@@ -221,7 +223,7 @@ export default function AddProductModal({
                         </div>
 
                         <div className="w-full h-auto flex flex-col flex-wrap text-xs text-center justify-between gap-3">
-                            Cantidad
+                            Cantidad {unidad.toUpperCase()}
                             <div className="flex items-center gap-2 text-slate-700 justify-center">
                                 <button type="button" className="w-10 h-10 bg-white flex items-center justify-center
                                  rounded border active:bg-green-600 active:scale-90 transition-all active:text-slate-50 cursor-pointer" onClick={handleRestar}><Minus size={16} /></button>
